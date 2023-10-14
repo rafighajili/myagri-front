@@ -1,0 +1,8 @@
+.error,
+.description {
+  @apply w-fit text-2xs lg:text-xs;
+}
+
+.error {
+  @apply text-red-500;
+}

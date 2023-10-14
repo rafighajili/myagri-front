@@ -1,0 +1,181 @@
+.base {
+  @apply flex w-fit flex-nowrap items-center gap-x-1.5 active:select-none lg:gap-x-2;
+}
+
+.square {
+  @apply grid h-3.5 w-3.5 place-items-center rounded border border-neutral-600 bg-white-black text-white-black duration-200 ease-out-expo lg:h-4 lg:w-4 lg:border-2;
+}
+
+:global(.dark) .square {
+  @apply border-neutral-300;
+}
+
+.square svg {
+  @apply h-2.5 w-2.5 stroke-current lg:h-3 lg:w-3;
+}
+
+.square svg polyline {
+  @apply origin-center fill-none duration-150 ease-in;
+}
+
+.label {
+  @apply text-xs text-neutral-700 duration-200 lg:text-sm;
+}
+
+:global(.dark) .label {
+  @apply text-neutral-200;
+}
+
+/* is focus visible */
+
+.is-focus-visible .square {
+  @apply ring-1 ring-primary-500 ring-offset-1 ring-offset-white-black lg:ring-2;
+}
+
+/* is hovered */
+
+.is-hovered .square {
+  @apply border-neutral-700;
+}
+
+:global(.dark) .is-hovered .square {
+  @apply border-neutral-200;
+}
+
+.is-hovered .label,
+.is-pressed .label,
+.base:active .label {
+  @apply text-black-white;
+}
+
+/* is pressed */
+
+.is-pressed .square,
+.base:active .square {
+  @apply border-black;
+}
+
+:global(.dark) .is-pressed .square,
+:global(.dark) .base:active .square {
+  @apply border-white;
+}
+
+/* is checked */
+
+.is-checked .square {
+  @apply border-primary-500 bg-primary-500;
+}
+
+.is-checked.is-hovered .square {
+  @apply border-primary-600 bg-primary-600;
+}
+
+:global(.dark) .is-checked.is-hovered .square {
+  @apply border-primary-400 bg-primary-400;
+}
+
+.is-checked.is-pressed .square,
+.is-checked:active .square {
+  @apply border-primary-700 bg-primary-700;
+}
+
+:global(.dark) .is-checked.is-pressed .square,
+:global(.dark) .is-checked:active .square {
+  @apply border-primary-300 bg-primary-300;
+}
+
+/* is invalid */
+
+.is-invalid .square {
+  @apply border-red-500;
+}
+
+.is-invalid.is-checked .square {
+  @apply bg-red-500;
+}
+
+.is-invalid.is-hovered .square {
+  @apply border-red-600;
+}
+
+:global(.dark) .is-invalid.is-hovered .square {
+  @apply border-red-400;
+}
+
+.is-invalid.is-hovered.is-checked .square {
+  @apply bg-red-600;
+}
+
+:global(.dark) .is-invalid.is-hovered.is-checked .square {
+  @apply bg-red-400;
+}
+
+.is-invalid.is-pressed .square,
+.is-invalid:active .square {
+  @apply border-red-700;
+}
+
+:global(.dark) .is-invalid.is-pressed .square,
+:global(.dark) .is-invalid:active .square {
+  @apply border-red-300;
+}
+
+.is-invalid.is-pressed.is-checked .square,
+.is-invalid.is-checked:active .square {
+  @apply bg-red-700;
+}
+
+:global(.dark) .is-invalid.is-pressed.is-checked .square,
+:global(.dark) .is-invalid.is-checked:active .square {
+  @apply bg-red-300;
+}
+
+.is-invalid .label {
+  @apply text-red-600;
+}
+
+:global(.dark) .is-invalid .label {
+  @apply text-red-400;
+}
+
+.is-invalid.is-hovered .label,
+.is-invalid.is-pressed .label,
+.is-invalid:active .label {
+  @apply text-red-700;
+}
+
+:global(.dark) .is-invalid.is-hovered .label,
+:global(.dark) .is-invalid.is-pressed .label,
+:global(.dark) .is-invalid:active .label {
+  @apply text-red-300;
+}
+
+/* is disabled */
+
+.is-disabled {
+  @apply cursor-not-allowed;
+}
+
+.is-disabled .square {
+  @apply !border-neutral-400 !bg-neutral-100;
+}
+
+:global(.dark) .is-disabled .square {
+  @apply !border-neutral-500 !bg-neutral-900;
+}
+
+.is-disabled.is-checked .square {
+  @apply !bg-neutral-400;
+}
+
+:global(.dark) .is-disabled.is-checked .square {
+  @apply !bg-neutral-500;
+}
+
+.is-disabled .label {
+  @apply !text-neutral-400;
+}
+
+:global(.dark) .is-disabled .label {
+  @apply !text-neutral-500;
+}

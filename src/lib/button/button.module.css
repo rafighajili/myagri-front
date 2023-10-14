@@ -1,0 +1,558 @@
+.base {
+  @apply flex w-fit items-center justify-center whitespace-nowrap rounded-md outline-none duration-300 ease-out-expo disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.is-focus-visible {
+  @apply ring-1 ring-offset-1 ring-offset-white-black lg:ring-2;
+}
+
+/* size */
+
+.small {
+  @apply h-7 gap-x-0.5 px-1.5 text-2xs lg:h-8 lg:gap-x-1 lg:px-2 lg:text-xs;
+}
+
+.small svg {
+  @apply h-3.5 lg:h-4;
+}
+
+.medium {
+  @apply h-9 gap-x-1 px-2.5 text-xs lg:h-10 lg:gap-x-1.5 lg:px-3 lg:text-sm;
+}
+
+.medium svg {
+  @apply h-4.5 lg:h-5;
+}
+
+.large {
+  @apply h-11 gap-x-1.5 px-3.5 text-sm lg:h-12 lg:gap-x-2 lg:px-4 lg:text-base;
+}
+
+.large svg {
+  @apply h-5.5 lg:h-6;
+}
+
+/* color & variant  */
+
+.outlined {
+  @apply border;
+}
+
+/* primary */
+
+.primary.contained {
+  @apply bg-primary-500 text-white-black;
+}
+
+.primary.outlined {
+  @apply border-primary-300;
+}
+
+:global(.dark) .primary.outlined {
+  @apply border-primary-700;
+}
+
+.primary.outlined,
+.primary.ghost {
+  @apply text-primary-500;
+}
+
+.primary.is-focus-visible {
+  @apply ring-primary-500;
+}
+
+.primary.contained.is-hovered {
+  @apply bg-primary-600;
+}
+
+:global(.dark) .primary.contained.is-hovered {
+  @apply bg-primary-400;
+}
+
+.primary.contained.is-pressed {
+  @apply bg-primary-700;
+}
+
+:global(.dark) .primary.contained.is-pressed {
+  @apply bg-primary-300;
+}
+
+.primary.outlined.is-hovered {
+  @apply border-primary-500;
+}
+
+.primary.outlined.is-pressed {
+  @apply border-primary-700;
+}
+
+:global(.dark) .primary.outlined.is-pressed {
+  @apply border-primary-300;
+}
+
+.primary.outlined.is-hovered,
+.primary.ghost.is-hovered {
+  @apply bg-primary-50 text-primary-600;
+}
+
+:global(.dark) .primary.outlined.is-hovered,
+:global(.dark) .primary.ghost.is-hovered {
+  @apply bg-primary-950 text-primary-400;
+}
+
+.primary.outlined.is-pressed,
+.primary.ghost.is-pressed {
+  @apply bg-primary-100 text-primary-700;
+}
+
+:global(.dark) .primary.outlined.is-pressed,
+:global(.dark) .primary.ghost.is-pressed {
+  @apply bg-primary-900 text-primary-300;
+}
+
+/* secondary */
+
+.secondary.contained {
+  @apply bg-secondary-500 text-white-black;
+}
+
+.secondary.outlined {
+  @apply border-secondary-300;
+}
+
+:global(.dark) .secondary.outlined {
+  @apply border-secondary-700;
+}
+
+.secondary.outlined,
+.secondary.ghost {
+  @apply text-secondary-500;
+}
+
+.secondary.is-focus-visible {
+  @apply ring-secondary-500;
+}
+
+.secondary.contained.is-hovered {
+  @apply bg-secondary-600;
+}
+
+:global(.dark) .secondary.contained.is-hovered {
+  @apply bg-secondary-400;
+}
+
+.secondary.contained.is-pressed {
+  @apply bg-secondary-700;
+}
+
+:global(.dark) .secondary.contained.is-pressed {
+  @apply bg-secondary-300;
+}
+
+.secondary.outlined.is-hovered {
+  @apply border-secondary-500;
+}
+
+.secondary.outlined.is-pressed {
+  @apply border-secondary-700;
+}
+
+:global(.dark) .secondary.outlined.is-pressed {
+  @apply border-secondary-300;
+}
+
+.secondary.outlined.is-hovered,
+.secondary.ghost.is-hovered {
+  @apply bg-secondary-50 text-secondary-600;
+}
+
+:global(.dark) .secondary.outlined.is-hovered,
+:global(.dark) .secondary.ghost.is-hovered {
+  @apply bg-secondary-950 text-secondary-400;
+}
+
+.secondary.outlined.is-pressed,
+.secondary.ghost.is-pressed {
+  @apply bg-secondary-100 text-secondary-700;
+}
+
+:global(.dark) .secondary.outlined.is-pressed,
+:global(.dark) .secondary.ghost.is-pressed {
+  @apply bg-secondary-900 text-secondary-300;
+}
+
+/* success */
+
+.success.contained {
+  @apply bg-green-500 text-white-black;
+}
+
+.success.outlined {
+  @apply border-green-300;
+}
+
+:global(.dark) .success.outlined {
+  @apply border-green-700;
+}
+
+.success.outlined,
+.success.ghost {
+  @apply text-green-500;
+}
+
+.success.is-focus-visible {
+  @apply ring-green-500;
+}
+
+.success.contained.is-hovered {
+  @apply bg-green-600;
+}
+
+:global(.dark) .success.contained.is-hovered {
+  @apply bg-green-400;
+}
+
+.success.contained.is-pressed {
+  @apply bg-green-700;
+}
+
+:global(.dark) .success.contained.is-pressed {
+  @apply bg-green-300;
+}
+
+.success.outlined.is-hovered {
+  @apply border-green-500;
+}
+
+.success.outlined.is-pressed {
+  @apply border-green-700;
+}
+
+:global(.dark) .success.outlined.is-pressed {
+  @apply border-green-300;
+}
+
+.success.outlined.is-hovered,
+.success.ghost.is-hovered {
+  @apply bg-green-50 text-green-600;
+}
+
+:global(.dark) .success.outlined.is-hovered,
+:global(.dark) .success.ghost.is-hovered {
+  @apply bg-green-950 text-green-400;
+}
+
+.success.outlined.is-pressed,
+.success.ghost.is-pressed {
+  @apply bg-green-100 text-green-700;
+}
+
+:global(.dark) .success.outlined.is-pressed,
+:global(.dark) .success.ghost.is-pressed {
+  @apply bg-green-900 text-green-300;
+}
+
+/* error */
+
+.error.contained {
+  @apply bg-red-500 text-white-black;
+}
+
+.error.outlined {
+  @apply border-red-300;
+}
+
+:global(.dark) .error.outlined {
+  @apply border-red-700;
+}
+
+.error.outlined,
+.error.ghost {
+  @apply text-red-500;
+}
+
+.error.is-focus-visible {
+  @apply ring-red-500;
+}
+
+.error.contained.is-hovered {
+  @apply bg-red-600;
+}
+
+:global(.dark) .error.contained.is-hovered {
+  @apply bg-red-400;
+}
+
+.error.contained.is-pressed {
+  @apply bg-red-700;
+}
+
+:global(.dark) .error.contained.is-pressed {
+  @apply bg-red-300;
+}
+
+.error.outlined.is-hovered {
+  @apply border-red-500;
+}
+
+.error.outlined.is-pressed {
+  @apply border-red-700;
+}
+
+:global(.dark) .error.outlined.is-pressed {
+  @apply border-red-300;
+}
+
+.error.outlined.is-hovered,
+.error.ghost.is-hovered {
+  @apply bg-red-50 text-red-600;
+}
+
+:global(.dark) .error.outlined.is-hovered,
+:global(.dark) .error.ghost.is-hovered {
+  @apply bg-red-950 text-red-400;
+}
+
+.error.outlined.is-pressed,
+.error.ghost.is-pressed {
+  @apply bg-red-100 text-red-700;
+}
+
+:global(.dark) .error.outlined.is-pressed,
+:global(.dark) .error.ghost.is-pressed {
+  @apply bg-red-900 text-red-300;
+}
+
+/* info */
+
+.info.contained {
+  @apply bg-blue-500 text-white-black;
+}
+
+.info.outlined {
+  @apply border-blue-300;
+}
+
+:global(.dark) .info.outlined {
+  @apply border-blue-700;
+}
+
+.info.outlined,
+.info.ghost {
+  @apply text-blue-500;
+}
+
+.info.is-focus-visible {
+  @apply ring-blue-500;
+}
+
+.info.contained.is-hovered {
+  @apply bg-blue-600;
+}
+
+:global(.dark) .info.contained.is-hovered {
+  @apply bg-blue-400;
+}
+
+.info.contained.is-pressed {
+  @apply bg-blue-700;
+}
+
+:global(.dark) .info.contained.is-pressed {
+  @apply bg-blue-300;
+}
+
+.info.outlined.is-hovered {
+  @apply border-blue-500;
+}
+
+.info.outlined.is-pressed {
+  @apply border-blue-700;
+}
+
+:global(.dark) .info.outlined.is-pressed {
+  @apply border-blue-300;
+}
+
+.info.outlined.is-hovered,
+.info.ghost.is-hovered {
+  @apply bg-blue-50 text-blue-600;
+}
+
+:global(.dark) .info.outlined.is-hovered,
+:global(.dark) .info.ghost.is-hovered {
+  @apply bg-blue-950 text-blue-400;
+}
+
+.info.outlined.is-pressed,
+.info.ghost.is-pressed {
+  @apply bg-blue-100 text-blue-700;
+}
+
+:global(.dark) .info.outlined.is-pressed,
+:global(.dark) .info.ghost.is-pressed {
+  @apply bg-blue-900 text-blue-300;
+}
+
+/* warning */
+
+.warning.contained {
+  @apply bg-amber-500 text-white-black;
+}
+
+.warning.outlined {
+  @apply border-amber-300;
+}
+
+:global(.dark) .warning.outlined {
+  @apply border-amber-700;
+}
+
+.warning.outlined,
+.warning.ghost {
+  @apply text-amber-500;
+}
+
+.warning.is-focus-visible {
+  @apply ring-amber-500;
+}
+
+.warning.contained.is-hovered {
+  @apply bg-amber-600;
+}
+
+:global(.dark) .warning.contained.is-hovered {
+  @apply bg-amber-400;
+}
+
+.warning.contained.is-pressed {
+  @apply bg-amber-700;
+}
+
+:global(.dark) .warning.contained.is-pressed {
+  @apply bg-amber-300;
+}
+
+.warning.outlined.is-hovered {
+  @apply border-amber-500;
+}
+
+.warning.outlined.is-pressed {
+  @apply border-amber-700;
+}
+
+:global(.dark) .warning.outlined.is-pressed {
+  @apply border-amber-300;
+}
+
+.warning.outlined.is-hovered,
+.warning.ghost.is-hovered {
+  @apply bg-amber-50 text-amber-600;
+}
+
+:global(.dark) .warning.outlined.is-hovered,
+:global(.dark) .warning.ghost.is-hovered {
+  @apply bg-amber-950 text-amber-400;
+}
+
+.warning.outlined.is-pressed,
+.warning.ghost.is-pressed {
+  @apply bg-amber-100 text-amber-700;
+}
+
+:global(.dark) .warning.outlined.is-pressed,
+:global(.dark) .warning.ghost.is-pressed {
+  @apply bg-amber-900 text-amber-300;
+}
+
+/* black-white */
+
+.black-white.contained {
+  @apply bg-black-white text-white-black;
+}
+
+.black-white.outlined {
+  @apply border-black-white/50;
+}
+
+.black-white.outlined,
+.black-white.ghost {
+  @apply text-black-white;
+}
+
+.black-white.is-focus-visible {
+  @apply ring-black-white;
+}
+
+.black-white.contained.is-hovered {
+  @apply bg-neutral-800;
+}
+
+:global(.dark) .black-white.contained.is-hovered {
+  @apply bg-neutral-300;
+}
+
+.black-white.contained.is-pressed {
+  @apply bg-neutral-700;
+}
+
+:global(.dark) .black-white.contained.is-pressed {
+  @apply bg-neutral-400;
+}
+
+.black-white.outlined.is-hovered,
+.black-white.outlined.is-pressed {
+  @apply border-black-white;
+}
+
+.black-white.outlined.is-hovered,
+.black-white.ghost.is-hovered {
+  @apply bg-black-white/10;
+}
+
+.black-white.outlined.is-pressed,
+.black-white.ghost.is-pressed {
+  @apply bg-black-white/20;
+}
+
+/* alpha */
+
+.alpha.contained {
+  @apply bg-black-white/5 text-black-white;
+}
+
+.alpha.outlined {
+  @apply border-black-white/20;
+}
+
+.alpha.outlined,
+.alpha.ghost {
+  @apply text-black-white;
+}
+
+.alpha.is-focus-visible {
+  @apply ring-black-white;
+}
+
+.alpha.contained.is-hovered,
+.alpha.outlined.is-hovered,
+.alpha.ghost.is-hovered {
+  @apply bg-black-white/10;
+}
+
+.alpha.contained.is-pressed,
+.alpha.outlined.is-pressed,
+.alpha.ghost.is-pressed {
+  @apply bg-black-white/20;
+}
+
+/* full rounded */
+
+.full-rounded {
+  @apply rounded-full;
+}
+
+/* full width */
+
+.full-width {
+  @apply w-full;
+}

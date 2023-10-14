@@ -1,0 +1,144 @@
+.base {
+  @apply m-0.5 grid h-8 w-8 select-none place-items-center rounded-full text-xs font-normal text-black-white duration-100 lg:m-1 lg:h-10 lg:w-10 lg:text-sm;
+}
+
+.base.is-hovered {
+  @apply bg-black-white/5;
+}
+
+.base.is-pressed {
+  @apply bg-black-white/10;
+}
+
+.is-outside-visible-range {
+  @apply hidden;
+}
+
+.is-focus-visible {
+  @apply ring-1 ring-primary-500 ring-offset-1 ring-offset-white-black lg:ring-2;
+}
+
+/* is today */
+
+.is-today {
+  @apply bg-black-white/[.15];
+}
+
+.is-today.is-hovered {
+  @apply bg-black-white/20;
+}
+
+.is-today.is-pressed {
+  @apply bg-black-white/25;
+}
+
+/* is selected */
+
+.is-selected {
+  @apply bg-primary-500 text-white-black;
+}
+
+.is-selected.is-hovered {
+  @apply bg-primary-600;
+}
+
+:global(.dark) .is-selected.is-hovered {
+  @apply bg-primary-400;
+}
+
+.is-selected.is-pressed {
+  @apply bg-primary-700;
+}
+
+:global(.dark) .is-selected.is-pressed {
+  @apply bg-primary-300;
+}
+
+/* is invalid */
+
+.is-invalid {
+  @apply bg-red-500;
+}
+
+.is-invalid.is-hovered {
+  @apply bg-red-600;
+}
+
+:global(.dark) .is-invalid.is-hovered {
+  @apply bg-red-400;
+}
+
+.is-invalid.is-pressed {
+  @apply bg-red-700;
+}
+
+:global(.dark) .is-invalid.is-pressed {
+  @apply bg-red-300;
+}
+
+/* range cases */
+
+.is-range-start,
+.is-selection-start,
+.is-range-end,
+.is-selection-end,
+.is-range-selection {
+  @apply relative z-0 before:absolute before:inset-y-0 before:-z-10 before:bg-primary-500/20 after:absolute after:inset-y-0 after:-z-10 after:bg-primary-500/20;
+}
+
+.is-range-selection {
+  @apply before:left-0 before:right-1/2 after:left-1/2 after:right-0;
+}
+
+.is-range-start,
+.is-selection-start {
+  @apply before:left-0.5 before:right-1/2 before:rounded-l-full after:left-1/2 after:right-0 lg:before:left-1;
+}
+
+.is-range-end,
+.is-selection-end {
+  @apply before:left-0 before:right-1/2 after:left-1/2 after:right-0.5 after:rounded-r-full lg:after:right-1;
+}
+
+.is-selection-start.is-selection-end {
+  @apply before:left-0.5 after:right-0.5 lg:before:left-1 lg:after:right-1;
+}
+
+.is-range-selection .base {
+  @apply bg-transparent text-black-white;
+}
+
+.is-range-selection .base.is-hovered {
+  @apply bg-primary-500/20;
+}
+
+.is-range-selection .base.is-pressed {
+  @apply bg-primary-500/30;
+}
+
+.is-range-selection .is-today {
+  @apply bg-black-white/10;
+}
+
+.is-range-selection .is-today.is-hovered {
+  @apply bg-black-white/[.15];
+}
+
+.is-range-selection .is-today.is-pressed {
+  @apply bg-black-white/20;
+}
+
+/* other cases */
+
+.is-disabled {
+  @apply opacity-50;
+}
+
+.is-unavailable {
+  @apply relative z-0 before:absolute before:left-1/2 before:top-1/2 before:z-10 before:h-0.5 before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:-rotate-12 before:rounded-full before:bg-black-white lg:before:w-6;
+}
+
+.is-disabled,
+.is-unavailable {
+  @apply cursor-not-allowed;
+}

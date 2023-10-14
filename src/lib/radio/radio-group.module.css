@@ -1,0 +1,7 @@
+.horizontal {
+  @apply flex flex-row flex-wrap gap-x-3.5 lg:gap-x-4;
+}
+
+.vertical {
+  @apply flex flex-col gap-y-3.5 lg:gap-y-4;
+}

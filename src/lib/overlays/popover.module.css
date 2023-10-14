@@ -1,0 +1,31 @@
+.underlay {
+  @apply fixed inset-0;
+}
+
+.base {
+  @apply relative max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl;
+}
+
+.arrow {
+  @apply absolute z-10 h-5 w-5 fill-white-black stroke-neutral-200 stroke-1 drop-shadow-sm lg:h-6 lg:w-6;
+}
+
+:global(.dark) .arrow {
+  @apply stroke-neutral-700;
+}
+
+.arrow[data-placement='top'] {
+  @apply top-full -translate-x-1/2;
+}
+
+.arrow[data-placement='bottom'] {
+  @apply bottom-full -translate-x-1/2 rotate-180;
+}
+
+.arrow[data-placement='left'] {
+  @apply left-full -translate-y-1/2 -rotate-90;
+}
+
+.arrow[data-placement='right'] {
+  @apply right-full -translate-y-1/2 rotate-90;
+}

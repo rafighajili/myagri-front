@@ -1,0 +1,11 @@
+.base {
+  @apply fixed inset-0 z-[999] grid place-items-center overflow-y-auto bg-black/20 py-8 backdrop-blur-sm duration-300 lg:py-16;
+}
+
+.content {
+  @apply relative w-full duration-300 sm:max-w-xl lg:max-w-4xl;
+}
+
+.dismiss {
+  @apply absolute right-2 top-2 lg:right-4 lg:top-4;
+}

@@ -1,0 +1,3 @@
+.base {
+  @apply flex w-fit flex-col gap-y-2 lg:gap-y-4;
+}

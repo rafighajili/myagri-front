@@ -1,0 +1,51 @@
+.base {
+  @apply inline-block aspect-square animate-spin rounded-full border-2 !border-b-transparent !border-l-transparent;
+}
+
+/* size */
+
+.small {
+  @apply h-3.5 lg:h-4;
+}
+
+.medium {
+  @apply h-4.5 lg:h-5;
+}
+
+.large {
+  @apply h-5.5 lg:h-6;
+}
+
+/* color */
+
+.primary {
+  @apply border-primary-500;
+}
+
+.secondary {
+  @apply border-secondary-500;
+}
+
+.success {
+  @apply border-green-500;
+}
+
+.error {
+  @apply border-red-500;
+}
+
+.info {
+  @apply border-blue-500;
+}
+
+.warning {
+  @apply border-yellow-500;
+}
+
+.black-white {
+  @apply border-black-white;
+}
+
+.white-black {
+  @apply border-white-black;
+}

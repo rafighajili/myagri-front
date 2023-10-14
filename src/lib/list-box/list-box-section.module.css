@@ -1,0 +1,11 @@
+.separator {
+  @apply my-1 lg:my-2;
+}
+
+.heading {
+  @apply cursor-default px-2 text-xs font-medium uppercase text-neutral-400 lg:px-2.5 lg:text-sm;
+}
+
+:global(.dark) .heading {
+  @apply text-neutral-500;
+}

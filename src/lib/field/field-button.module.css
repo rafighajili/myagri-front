@@ -1,0 +1,75 @@
+.base {
+  @apply flex items-center justify-center rounded-md border border-neutral-200 bg-white text-neutral-600 duration-300 ease-out-expo;
+}
+
+:global(.dark) .base {
+  @apply border-neutral-700 bg-black text-neutral-300;
+}
+
+.is-hovered,
+.is-pressed {
+  @apply !text-black;
+}
+
+:global(.dark) .is-hovered,
+:global(.dark) .is-pressed {
+  @apply !text-white;
+}
+
+.is-hovered,
+.is-group-hovered {
+  @apply border-neutral-300;
+}
+
+:global(.dark) .is-hovered,
+:global(.dark) .is-group-hovered {
+  @apply border-neutral-600;
+}
+
+.is-pressed {
+  @apply border-neutral-400 !bg-neutral-100;
+}
+
+:global(.dark) .is-pressed {
+  @apply border-neutral-500 !bg-neutral-800;
+}
+
+.is-disabled {
+  @apply cursor-not-allowed bg-neutral-100 text-neutral-300;
+}
+
+:global(.dark) .is-disabled {
+  @apply bg-neutral-800 text-neutral-600;
+}
+
+.is-invalid,
+:global(.dark) .is-invalid {
+  @apply !border-red-500;
+}
+
+.is-invalid.is-hovered,
+.is-invalid.is-group-hovered,
+.is-invalid.is-pressed {
+  @apply !border-red-600;
+}
+
+:global(.dark) .is-invalid.is-hovered,
+:global(.dark) .is-invalid.is-group-hovered,
+:global(.dark) .is-invalid.is-pressed {
+  @apply !border-red-400;
+}
+
+.is-focused,
+.is-focus-visible,
+.is-focused.is-invalid,
+.is-focus-visible.is-invalid,
+:global(.dark) .is-focused,
+:global(.dark) .is-focus-visible,
+:global(.dark) .is-focused.is-invalid,
+:global(.dark) .is-focus-visible.is-invalid {
+  @apply !border-primary-500;
+}
+
+.is-focus-visible {
+  @apply ring-1 ring-primary-500;
+}

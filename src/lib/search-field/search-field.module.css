@@ -1,0 +1,38 @@
+.input-base input::-webkit-search-cancel-button,
+.input-base input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.input-base input {
+  @apply !pr-9 lg:!pr-10;
+}
+
+.input-base button {
+  @apply right-0;
+}
+
+.has-end-icon input,
+.has-validation-state input {
+  @apply !pr-18 lg:!pr-20;
+}
+
+.has-end-icon button,
+.has-validation-state button {
+  @apply right-9 lg:right-10;
+}
+
+.has-end-icon.has-validation-state input {
+  @apply !pr-27 lg:!pr-30;
+}
+
+.has-end-icon.has-validation-state button {
+  @apply right-18 lg:right-20;
+}
+
+.button {
+  @apply absolute inset-y-0 grid aspect-square place-items-center !rounded-none !border-none !bg-transparent disabled:pointer-events-none;
+}
+
+.button svg {
+  @apply h-3.5 w-3.5 lg:h-4 lg:w-4;
+}

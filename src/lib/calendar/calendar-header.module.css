@@ -1,0 +1,7 @@
+.base {
+  @apply flex items-center justify-between;
+}
+
+.title {
+  @apply font-medium lg:text-lg;
+}

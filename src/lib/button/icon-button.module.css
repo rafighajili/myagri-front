@@ -1,0 +1,3 @@
+.base {
+  @apply aspect-square w-fit px-0;
+}

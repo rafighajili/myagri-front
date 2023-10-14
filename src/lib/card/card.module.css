@@ -1,0 +1,15 @@
+.base {
+  @apply rounded-md border border-neutral-200 bg-white-black shadow-md shadow-black/[.04] duration-200 ease-out-expo lg:rounded-lg;
+}
+
+:global(.dark) .base {
+  @apply border-neutral-700 shadow-none;
+}
+
+.is-hovered {
+  @apply shadow-xl shadow-black/[.06];
+}
+
+:global(.dark) .is-hovered {
+  @apply border-white;
+}

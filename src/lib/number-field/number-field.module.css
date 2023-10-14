@@ -1,0 +1,24 @@
+.group {
+  @apply grid grid-cols-[1fr,1.75rem] grid-rows-2 rounded-md lg:grid-cols-[1fr,2rem];
+}
+
+.base {
+  @apply row-span-2;
+}
+
+.self {
+  @apply rounded-r-none !border-r-0;
+}
+
+.increment {
+  @apply rounded-l-none rounded-br-none !border-b-[0.5px];
+}
+
+.decrement {
+  @apply rounded-l-none rounded-tr-none !border-t-[0.5px];
+}
+
+.increment svg,
+.decrement svg {
+  @apply h-3.5 w-3.5 lg:h-4 lg:w-4;
+}

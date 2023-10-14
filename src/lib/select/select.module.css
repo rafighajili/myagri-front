@@ -1,0 +1,22 @@
+.base {
+}
+
+.button {
+  @apply h-9 w-full !justify-between rounded-md border border-neutral-200 bg-white-black px-2.5 duration-300 ease-out-expo lg:h-10 lg:px-3;
+}
+
+.value {
+  @apply text-xs lg:text-sm;
+}
+
+.icon {
+  @apply h-4.5 w-4.5 lg:h-5 lg:w-5;
+}
+
+.popover {
+  @apply max-h-48 max-w-full overflow-y-auto lg:max-h-64;
+}
+
+.list {
+  @apply py-1 lg:py-2;
+}

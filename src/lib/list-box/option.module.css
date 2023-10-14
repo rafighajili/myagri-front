@@ -1,0 +1,28 @@
+.base {
+  @apply flex h-9 cursor-default items-center justify-between px-2 outline-none lg:h-10 lg:px-2.5;
+}
+
+.label {
+  @apply text-xs lg:text-sm;
+}
+
+.icon {
+  @apply h-4 w-4 text-primary-500 lg:h-4.5 lg:w-4.5;
+}
+
+.is-hovered,
+.is-focus-visible {
+  @apply bg-black-white/10;
+}
+
+.is-focus-visible {
+  @apply relative before:absolute before:inset-y-0 before:left-0 before:w-0.5 before:bg-primary-500;
+}
+
+.is-disabled {
+  @apply cursor-not-allowed text-neutral-400;
+}
+
+:global(.dark) .is-disabled {
+  @apply text-neutral-500;
+}

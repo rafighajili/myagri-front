@@ -1,0 +1,7 @@
+.base {
+  @apply w-fit cursor-default text-2xs lg:text-xs;
+}
+
+.base svg {
+  @apply mb-0.5 ml-px inline-block h-1.5 w-1.5 lg:mb-1 lg:ml-0.5 lg:h-2 lg:w-2;
+}

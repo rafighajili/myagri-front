@@ -1,0 +1,23 @@
+.base {
+  @apply grid grid-cols-[1fr,auto] rounded-md;
+}
+
+.self {
+  @apply !rounded-r-none !border-r-0;
+}
+
+.popover {
+  @apply max-h-48 max-w-full overflow-y-auto lg:max-h-64;
+}
+
+.button {
+  @apply w-9 rounded-l-none lg:w-10;
+}
+
+.icon {
+  @apply h-4.5 w-4.5 lg:h-5 lg:w-5;
+}
+
+.list {
+  @apply py-1 lg:py-2;
+}

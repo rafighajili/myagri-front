@@ -1,0 +1,143 @@
+.base {
+  @apply flex w-fit flex-nowrap items-center gap-x-1.5 active:select-none lg:gap-x-2;
+}
+
+.circle {
+  @apply grid h-3.5 w-3.5 place-items-center rounded-full border border-neutral-600 bg-white-black text-white-black duration-200 lg:h-4 lg:w-4 lg:border-2;
+}
+
+:global(.dark) .circle {
+  @apply border-neutral-300;
+}
+
+.label {
+  @apply text-xs text-neutral-700 duration-200 lg:text-sm;
+}
+
+:global(.dark) .label {
+  @apply text-neutral-200;
+}
+
+/* is focus visible */
+
+.is-focus-visible .circle {
+  @apply ring-1 ring-primary-500 ring-offset-1 ring-offset-white-black lg:ring-2;
+}
+
+/* is hovered */
+
+.is-hovered .circle {
+  @apply border-neutral-700;
+}
+
+:global(.dark) .is-hovered .circle {
+  @apply border-neutral-200;
+}
+
+.is-hovered .label,
+.is-pressed .label,
+.base:active .label {
+  @apply text-black-white;
+}
+
+/* is pressed */
+
+.is-pressed .circle,
+.base:active .circle {
+  @apply border-black;
+}
+
+:global(.dark) .is-pressed .circle,
+:global(.dark) .base:active .circle {
+  @apply border-white;
+}
+
+/* is checked */
+
+.is-checked .circle {
+  @apply border-4 border-primary-500 lg:border-[5px];
+}
+
+.is-checked.is-hovered .circle {
+  @apply border-primary-600;
+}
+
+:global(.dark) .is-checked.is-hovered .circle {
+  @apply border-primary-400;
+}
+
+.is-checked.is-pressed .circle,
+.is-checked:active .circle {
+  @apply border-primary-700;
+}
+
+:global(.dark) .is-checked.is-pressed .circle,
+:global(.dark) .is-checked:active .circle {
+  @apply border-primary-300;
+}
+
+/* is invalid */
+
+.is-invalid .circle {
+  @apply border-red-500;
+}
+
+.is-invalid.is-hovered .circle {
+  @apply border-red-600;
+}
+
+:global(.dark) .is-invalid.is-hovered .circle {
+  @apply border-red-400;
+}
+
+.is-invalid.is-pressed .circle,
+.is-invalid:active .circle {
+  @apply border-red-700;
+}
+
+:global(.dark) .is-invalid.is-pressed .circle,
+:global(.dark) .is-invalid:active .circle {
+  @apply border-red-300;
+}
+
+.is-invalid .label {
+  @apply text-red-600;
+}
+
+:global(.dark) .is-invalid .label {
+  @apply text-red-400;
+}
+
+.is-invalid.is-hovered .label,
+.is-invalid.is-pressed .label,
+.is-invalid:active .label {
+  @apply text-red-700;
+}
+
+:global(.dark) .is-invalid.is-hovered .label,
+:global(.dark) .is-invalid.is-pressed .label,
+:global(.dark) .is-invalid:active .label {
+  @apply text-red-300;
+}
+
+/* is disabled */
+
+.is-disabled {
+  @apply cursor-not-allowed;
+}
+
+.is-disabled .circle {
+  @apply !border-neutral-400 !bg-neutral-100;
+}
+
+:global(.dark) .is-disabled .circle {
+  @apply !border-neutral-500 !bg-neutral-900;
+}
+
+.is-disabled .label {
+  @apply !text-neutral-400;
+}
+
+:global(.dark) .is-disabled .label {
+  @apply !text-neutral-500;
+}

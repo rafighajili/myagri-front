@@ -1,0 +1,35 @@
+.base {
+  @apply rounded-full bg-black-white/20;
+}
+
+.horizontal {
+  @apply w-full;
+}
+
+.vertical {
+  @apply h-full;
+}
+
+.horizontal.small {
+  @apply h-px;
+}
+
+.vertical.small {
+  @apply w-px;
+}
+
+.horizontal.medium {
+  @apply h-0.5;
+}
+
+.vertical.medium {
+  @apply w-0.5;
+}
+
+.horizontal.large {
+  @apply h-1;
+}
+
+.vertical.large {
+  @apply w-1;
+}
