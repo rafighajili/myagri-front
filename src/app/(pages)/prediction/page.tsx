@@ -4,29 +4,11 @@ import { Card, Select } from "#/lib";
 import { Item } from "react-stately";
 import regionsNames from "#/constants/regionsNames";
 import { useState } from "react";
-
-type PredictionType = {
-  city: string;
-  temperature: number;
-  random_plant: {
-    name: string;
-    price: number;
-    money_spend: number;
-  };
-};
-
-const dummyData: PredictionType = {
-  city: "Quba",
-  temperature: 27,
-  random_plant: {
-    name: "Nar",
-    price: 1500,
-    money_spend: 522,
-  },
-};
+import { useGetPredictionQuery } from "#/redux/apiSlice";
+import { Prediction } from "#/types/prediction";
 
 const filteredData: Record<
-  keyof PredictionType["random_plant"],
+  keyof Prediction["random_plant"],
   {
     heading: string;
     headingClassName: string;
@@ -51,11 +33,17 @@ const filteredData: Record<
 };
 
 export default function Prediction() {
-  const [regionId, setRegionId] = useState<string | number | null>(null);
+  const [regionId, setRegionId] = useState<string>("");
 
-  const dataKeys = Object.keys(dummyData.random_plant) as Array<
-    keyof PredictionType["random_plant"]
-  >;
+  const { data, isLoading, isFetching } = useGetPredictionQuery({
+    city: regionsNames.find((region) => region.id === regionId)?.name,
+  });
+
+  const dataKeys = !!data
+    ? (Object.keys(data.random_plant) as Array<
+        keyof Prediction["random_plant"]
+      >)
+    : [];
 
   return (
     <div>
@@ -69,23 +57,31 @@ export default function Prediction() {
       </Select>
 
       <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-6">
-        {dataKeys.map((key) => (
-          <Card
-            key={key}
-            hasHoverStyles
-            className="col-span-2 flex flex-col items-center gap-y-2 px-4 py-8 last:sm:col-start-2 last:lg:col-start-auto"
-          >
-            <h2
-              className={`text-lg font-bold ${filteredData[key].headingClassName}`}
+        {isLoading ? (
+          <div>loading...</div>
+        ) : isFetching ? (
+          <div>fetching...</div>
+        ) : !data ? (
+          <div>no data</div>
+        ) : (
+          dataKeys.map((key) => (
+            <Card
+              key={key}
+              hasHoverStyles
+              className="col-span-2 flex flex-col items-center gap-y-2 px-4 py-8 last:sm:col-start-2 last:lg:col-start-auto"
             >
-              {filteredData[key].heading}
-            </h2>
+              <h2
+                className={`text-lg font-bold ${filteredData[key].headingClassName}`}
+              >
+                {filteredData[key].heading}
+              </h2>
 
-            <p className="font-medium">
-              {filteredData[key].description(dummyData.random_plant[key])}
-            </p>
-          </Card>
-        ))}
+              <p className="font-medium">
+                {filteredData[key].description(data.random_plant[key])}
+              </p>
+            </Card>
+          ))
+        )}
       </div>
     </div>
   );

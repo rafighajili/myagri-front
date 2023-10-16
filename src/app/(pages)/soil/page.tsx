@@ -4,33 +4,11 @@ import { Card, Select } from "#/lib";
 import { Item } from "react-stately";
 import regionsNames from "#/constants/regionsNames";
 import { ReactNode, useState } from "react";
-
-type SoilType = {
-  Rayon: string;
-  "Su_seviyesi(bu_gun)": number;
-  Aylıq_ortalama_su_seviyesi: number;
-  Torpaq_rutubetliyi: number;
-  "Torpaq_rutubetliyi(gelen_ay)": number;
-  "Qerarlasmis_su_seviyyesi(3_hefte_erzinde)": number;
-  Max_su_seviyyesi: number;
-  Dasqin_Ehtimali: number;
-  Author: string;
-};
-
-const dummyData: SoilType = {
-  Rayon: "Quba",
-  "Su_seviyesi(bu_gun)": 1.38,
-  Aylıq_ortalama_su_seviyesi: 1.44,
-  Torpaq_rutubetliyi: 3.99,
-  "Torpaq_rutubetliyi(gelen_ay)": 0.05,
-  "Qerarlasmis_su_seviyyesi(3_hefte_erzinde)": 1.58,
-  Max_su_seviyyesi: 2.3,
-  Dasqin_Ehtimali: 68.59,
-  Author: "Abid Qurbanov (Elqa center:)",
-};
+import { useGetSoilQuery } from "#/redux/apiSlice";
+import { Soil } from "#/types/soil";
 
 const filteredData: Record<
-  keyof SoilType,
+  keyof Soil,
   {
     icon: ReactNode;
     heading: string;
@@ -85,9 +63,13 @@ const filteredData: Record<
 };
 
 export default function Prediction() {
-  const [regionId, setRegionId] = useState<string | number | null>(null);
+  const [regionId, setRegionId] = useState<string>("");
 
-  const dataKeys = Object.keys(dummyData) as Array<keyof SoilType>;
+  const { data, isLoading, isFetching } = useGetSoilQuery({
+    city: regionsNames.find((region) => region.id === regionId)?.name,
+  });
+
+  const dataKeys = !!data ? (Object.keys(data) as Array<keyof Soil>) : [];
 
   return (
     <div>
@@ -101,19 +83,27 @@ export default function Prediction() {
       </Select>
 
       <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-6 items-center">
-        {dataKeys.map((key) => (
-          <Card
-            key={key}
-            hasHoverStyles
-            className="col-span-2 flex flex-col items-center text-center gap-y-2 px-4 py-8 last:sm:col-start-2 last:lg:col-start-auto"
-          >
-            <h2 className="text-lg font-bold">{filteredData[key].heading}</h2>
+        {isLoading ? (
+          <div>loading...</div>
+        ) : isFetching ? (
+          <div>fetching...</div>
+        ) : !data ? (
+          <div>no data</div>
+        ) : (
+          dataKeys.map((key) => (
+            <Card
+              key={key}
+              hasHoverStyles
+              className="col-span-2 flex flex-col items-center text-center gap-y-2 px-4 py-8 last:sm:col-start-2 last:lg:col-start-auto"
+            >
+              <h2 className="text-lg font-bold">{filteredData[key].heading}</h2>
 
-            <p className="font-medium">
-              {filteredData[key].description(dummyData[key])}
-            </p>
-          </Card>
-        ))}
+              <p className="font-medium">
+                {filteredData[key].description(data[key])}
+              </p>
+            </Card>
+          ))
+        )}
       </div>
     </div>
   );
