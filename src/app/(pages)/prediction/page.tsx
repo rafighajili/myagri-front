@@ -21,7 +21,7 @@ const filteredData: Record<
     description: (value) => value,
   },
   price: {
-    heading: "Price",
+    heading: "Income",
     headingClassName: "text-green-500",
     description: (value) => `${value} AZN`,
   },

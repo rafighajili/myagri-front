@@ -9,19 +9,16 @@ const apiSlice = createApi({
       "https://smarthackathon.alwaysdata.net/mission2023/enigma/hackaton1",
   }),
   endpoints: (builder) => ({
-    getPrediction: builder.query<
-      Prediction | undefined,
-      { city?: string; temperature?: number }
-    >({
-      query: ({ city = "", temperature = 27 }) => ({
+    getPrediction: builder.query<Prediction | undefined, { city: string }>({
+      query: ({ city }) => ({
         url: "/api1.php",
-        params: { city, temperature },
+        params: { city, temperature: 27 },
       }),
       transformResponse: (response: Prediction) =>
         !!response.city ? response : undefined,
     }),
-    getSoil: builder.query<Soil | undefined, { city?: string }>({
-      query: ({ city = "" }) => ({ url: "/api.php", params: { uid: city } }),
+    getSoil: builder.query<Soil | undefined, { city: string }>({
+      query: ({ city }) => ({ url: "/api.php", params: { uid: city } }),
       transformResponse: (response: Soil[]) =>
         !!response.length ? response[0] : undefined,
     }),

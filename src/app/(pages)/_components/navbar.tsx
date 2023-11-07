@@ -13,11 +13,11 @@ const navLinks: { name: string; link: string }[] = [
     link: "",
   },
   {
-    name: "Prediction",
+    name: "Predict Plant",
     link: "prediction",
   },
   {
-    name: "Soil",
+    name: "Soil Type",
     link: "soil",
   },
   {
